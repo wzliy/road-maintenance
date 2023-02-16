@@ -18,8 +18,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - run: mvn compile
-      - run: mvn -B package --file pom.xml -Dmaven.test.skip=true
+      - run: mvn package spring-boot:repackage
 
         # 将jar包上传到服务器中
       - name: ssh-scp-ssh-pipelines
