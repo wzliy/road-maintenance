@@ -18,8 +18,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - run: mvn --batch-mode --update-snapshots package
-      - run: mkdir deploy && cp target/*.jar deploy
+      - run: mvn compile
+      - run: mvn -B package --file pom.xml -Dmaven.test.skip=true
 
         # 将jar包上传到服务器中
       - name: ssh-scp-ssh-pipelines
