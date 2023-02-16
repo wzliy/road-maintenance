@@ -5,3 +5,9 @@ server:
 spring:
   application:
     name: road-maintenance
+
+  # datasource
+  datasource:
+    url: jdbc:mysql://119.91.136.116:3306/road_maintenance?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Wang@100086

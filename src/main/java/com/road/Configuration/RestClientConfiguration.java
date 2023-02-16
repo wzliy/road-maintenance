@@ -2,6 +2,8 @@ package com.road.Configuration;
 
 import com.road.common.client.CommonRestTemplateCustomizer;
 import com.road.common.client.RestClient;
+import com.road.properties.RestTemplateProperties;
+import org.apache.hc.client5.http.HttpRoute;
 import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
@@ -10,11 +12,17 @@ import org.apache.hc.client5.http.socket.ConnectionSocketFactory;
 import org.apache.hc.client5.http.socket.PlainConnectionSocketFactory;
 import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
 import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
+import org.apache.hc.core5.http.HttpHost;
 import org.apache.hc.core5.http.config.Registry;
 import org.apache.hc.core5.http.config.RegistryBuilder;
 import org.apache.hc.core5.ssl.SSLContextBuilder;
 import org.apache.hc.core5.ssl.TrustStrategy;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,12 +33,20 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
+import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
-@Configuration
+/**
+ * 客户端工具自动化配置
+ */
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnClass(RestClient.class)
+@EnableConfigurationProperties(RestTemplateProperties.class)
+@AutoConfigureAfter({RestTemplateAutoConfiguration.class})
+@ConditionalOnProperty(name = "jxjt.rest-template.enabled", havingValue = "true", matchIfMissing = true)
 public class RestClientConfiguration {
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder,
@@ -61,7 +77,7 @@ public class RestClientConfiguration {
     }
 
     @Bean
-    public HttpClientConnectionManager httpClientConnectionManager(SSLContext sslContext) {
+    public HttpClientConnectionManager httpClientConnectionManager(RestTemplateProperties properties, SSLContext sslContext) throws URISyntaxException {
         HostnameVerifier hostnameVerifier = NoopHostnameVerifier.INSTANCE;
 
         SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext, hostnameVerifier);
@@ -71,7 +87,12 @@ public class RestClientConfiguration {
                 .build();
 
         PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager(socketFactoryRegistry);
-        connectionManager.setMaxTotal(200);
+        connectionManager.setMaxTotal(properties.getMaxTotal());
+        connectionManager.setDefaultMaxPerRoute(properties.getMaxPerRoute());
+        for (RestTemplateProperties.MaxPerRoute hostRoute : properties.getHostRoutes()) {
+            HttpHost httpHost = HttpHost.create(hostRoute.getHost());
+            connectionManager.setMaxPerRoute(new HttpRoute(httpHost), hostRoute.getMaxRoute());
+        }
 
         return connectionManager;
     }
