@@ -19,7 +19,7 @@ jobs:
           distribution: 'temurin'
 
       - run: mvn --batch-mode --update-snapshots package
-      - run: mkdir deploay && cp target/*.jar deploy
+      - run: mkdir deploy && cp target/*.jar deploy
 
         # 将jar包上传到服务器中
       - name: ssh-scp-ssh-pipelines
@@ -31,7 +31,7 @@ jobs:
           pass: ${{ secrets.SSH_PASSWORD }}
           # 复制本地jar包到远程服务器目录
           scp: |
-            deploy/*.jar => project/web/
+            target/*.jar => project/web/
           # 执行java -jar命令
           last_ssh: |
             cd project/web/ && jav -jar *.jar &
