@@ -1,41 +1,64 @@
-package com.road.model;
+package com.road.model.param;
 
-public class RoadInfo {
-    private Integer id;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * 道路维护信息实体
+ */
+@Schema(description = "道路维护信息参数")
+public class RoadInfoParam {
+
+    // 道路名
+    @Schema(description = "道路名")
     private String roadName;
+
     // 地点
+    @Schema(description = "地点")
     private String address;
+
     // 坐标(经纬度)
+    @Schema(description = "坐标")
     private String location;
+
     // 发现单位
+    @Schema(description = "发现单位")
     private String discoveryUnit;
+
     // 发现人员
+    @Schema(description = "发现人员")
     private String discoveryStaff;
+
     // 路况描述
+    @Schema(description = "路况描述")
     private String dangerDesc;
+
     // 隐患照片
+    @Schema(description = "隐患照片")
     private String dangerPhoto;
 
     // 整改人员
+    @Schema(description = "整改人员")
     private String rectificationStaff;
+
     // 整改单位
+    @Schema(description = "整改单位")
     private String rectificationUnit;
+
     // 整改时间
+    @Schema(description = "整改时间")
     private String rectificationTime;
+
     // 整改描述
+    @Schema(description = "整改描述")
     private String rectificationDesc;
+
     // 整改图片
+    @Schema(description = "整改图片")
     private String rectificationPhoto;
+
     // 状态
+    @Schema(description = "状态")
     private String status;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getRoadName() {
         return roadName;

@@ -33,4 +33,4 @@ jobs:
             target/*.jar => project/web/
           # 执行java -jar命令
           last_ssh: |
-            cd project/web/ && jav -jar *.jar &
+            cd project/web/ && java -jar road-maintenance-1.0-SNAPSHOT.jar >log.txt &
