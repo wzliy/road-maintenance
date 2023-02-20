@@ -17,6 +17,7 @@ import java.util.List;
  * 道路信息维护
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/road")
 @Tag(name = "道路维护信息接口")
 public class RoadController {
