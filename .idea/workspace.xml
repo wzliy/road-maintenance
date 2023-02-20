@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc715f04-fb2f-4745-a7e1-d4c2ce6eca9d" name="Changes" comment="新增上传文件接口">
+    <list default="true" id="dc715f04-fb2f-4745-a7e1-d4c2ce6eca9d" name="Changes" comment="新增参数字段">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/entity/RoadInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/entity/RoadInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/param/RoadInfoParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/param/RoadInfoParam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676379855642</updated>
       <workItem from="1676379858061" duration="2769000" />
-      <workItem from="1676423759921" duration="50020000" />
+      <workItem from="1676423759921" duration="51326000" />
     </task>
     <task id="LOCAL-00001" summary="完善功能开发">
       <created>1676451203742</created>
@@ -170,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676873465793</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="新增参数字段">
+      <created>1676877814716</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676877814716</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +197,8 @@
     <MESSAGE value="完善功能开发" />
     <MESSAGE value="增加跨域允许" />
     <MESSAGE value="新增上传文件接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增上传文件接口" />
+    <MESSAGE value="新增参数字段" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增参数字段" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

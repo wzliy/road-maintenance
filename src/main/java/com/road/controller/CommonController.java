@@ -41,7 +41,7 @@ public class CommonController {
      * @param multipartFile 文件流
      * @return 文件地址
      */
-    @PostMapping(path = "/file/upload", headers = "content-type=multipart/form-data")
+    @PostMapping(path = "/file/upload")
     @Operation(summary = "文件上传", description = "文件上传接口")
     public ApiResult<String> uploadFile(@RequestParam("uploadFile") MultipartFile multipartFile){
         return ResultUtil.success(commonService.uploadFile(multipartFile));
