@@ -1,15 +1,25 @@
 package com.road.model.response;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  * 道路交叉口
  */
+@Schema(description = "道路交叉口")
 public class Roadinter {
+    @Schema(description = "交叉路口到请求坐标的距离")
     private String distance;
+    @Schema(description = "方位")
     private String direction;
+    @Schema(description = "路口经纬度")
     private String location;
+    @Schema(description = "第一条道路id")
     private String first_id;
+    @Schema(description = "第一条道路名称")
     private String first_name;
+    @Schema(description = "第二条道路id")
     private String second_id;
+    @Schema(description = "第二条道路名称")
     private String second_name;
 
     public String getDistance() {

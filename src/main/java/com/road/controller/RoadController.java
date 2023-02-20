@@ -6,6 +6,7 @@ import com.road.model.entity.RoadInfo;
 import com.road.model.param.RoadInfoParam;
 import com.road.service.RoadService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -35,8 +36,10 @@ public class RoadController {
 
     @Operation(summary = "查询道路维护信息")
     @GetMapping("/findList")
-    public ApiResult<List<RoadInfo>> findRoadInfoList() {
-        return ResultUtil.success(roadService.findList());
+    public ApiResult<List<RoadInfo>> findRoadInfoList(
+            @Parameter(name = "status", description = "道路维护状态：registered：已登记；rectified：已整改")
+            @RequestParam(required = false) String status) {
+        return ResultUtil.success(roadService.findList(status));
     }
 
     @Operation(summary = "更新道路维护信息")

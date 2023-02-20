@@ -1,47 +1,65 @@
 package com.road.model.response;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  * 地址元素
  */
 public class AddressComponent {
     // 所在省
+    @Schema(description = "所在省")
     private String province;
 
     // 所在城市
+    @Schema(description = "所在城市")
     private String city;
 
     // 城市编码
+    @Schema(description = "城市编码")
     private String citycode;
 
     // 所在区
+    @Schema(description = "所在区")
     private String district;
 
     // 区域编码
+    @Schema(description = "区域编码")
     private String adcode;
 
     // 坐标点所在乡镇/街道
+    @Schema(description = "坐标点所在乡镇/街道")
     private String township;
 
     // 乡镇街道编码
+    @Schema(description = "乡镇街道编码")
     private String towncode;
 
     // 社区信息
+    @Schema(description = "社区信息")
     private Neighborhood neighborhood;
 
     // 楼信息列表
+    @Schema(description = "楼信息列表")
     private Building building;
 
     // 门牌信息列表
+    @Schema(description = "门牌信息列表")
     private StreetNumber streetNumber;
 
     // 所属海域信息
+    @Schema(description = "所属海域信息")
     private String seaArea;
 
     // 经纬度所属商圈列表
+    @Schema(description = "经纬度所属商圈列表")
     private BusinessAreas businessAreas;
 
     private static class Neighborhood {
+        // 社区名称
+        @Schema(description = "社区名称")
         private String name;
+        // POI类型
+        @Schema(description = "POI类型")
         private String type;
 
         public String getName() {
@@ -61,10 +79,10 @@ public class AddressComponent {
         }
     }
 
-
-
-    private class Building {
+    private static class Building {
+        @Schema(description = "建筑名称")
         private String name;
+        @Schema(description = "类型")
         private String type;
 
         public String getName() {
@@ -84,11 +102,16 @@ public class AddressComponent {
         }
     }
 
-    private class StreetNumber {
+    private static class StreetNumber {
+        @Schema(description = "街道名称")
         private String street;
+        @Schema(description = "门牌号")
         private String number;
+        @Schema(description = "坐标点")
         private String location;
+        @Schema(description = "方向")
         private String direction;
+        @Schema(description = "门牌地址到请求坐标的距离")
         private String distance;
 
         public String getStreet() {
@@ -132,11 +155,14 @@ public class AddressComponent {
         }
     }
 
-    private class BusinessAreas {
-
+    private static class BusinessAreas {
+        @Schema(description = "商圈信息")
         private String businessArea;
+        @Schema(description = "商圈中心点经纬度")
         private String location;
+        @Schema(description = "商圈名称")
         private String name;
+        @Schema(description = "商圈所在区域的adcode")
         private String id;
 
         public String getBusinessArea() {

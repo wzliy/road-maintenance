@@ -1,8 +1,11 @@
 package com.road.service;
 
+import com.road.model.RoadStatusEnum;
 import com.road.model.entity.RoadInfo;
 import com.road.model.param.RoadInfoParam;
 import com.road.repository.RoadInfoRepository;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -24,7 +27,10 @@ public class RoadService {
      * 查询道路信息维护列表
      * @return roadInfoList
      */
-    public List<RoadInfo> findList() {
+    public List<RoadInfo> findList(String status) {
+        if (StringUtils.isNoneBlank(status)) {
+            return roadInfoRepository.findByStatus(status);
+        }
         return roadInfoRepository.findAll();
     }
 
@@ -35,7 +41,8 @@ public class RoadService {
      */
     public RoadInfo add(RoadInfoParam roadInfoParam) {
         RoadInfo roadInfo = new RoadInfo();
-        roadInfo.setRoadName(roadInfoParam.getRoadName());
+        BeanUtils.copyProperties(roadInfoParam, roadInfo);
+        roadInfo.setStatus(RoadStatusEnum.REGISTERED.getCode());
         return roadInfoRepository.save(roadInfo);
     }
 

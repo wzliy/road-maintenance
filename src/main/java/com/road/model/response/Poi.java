@@ -1,17 +1,29 @@
 package com.road.model.response;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  * Poi信息
  */
+@Schema(description = "poi信息")
 public class Poi {
+    @Schema(description = "poi的id")
     private String id;
+    @Schema(description = "poi点名称")
     private String name;
+    @Schema(description = "poi类型")
     private String type;
+    @Schema(description = "电话")
     private String tel;
+    @Schema(description = "该POI的中心点到请求坐标的距离")
     private String distance;
+    @Schema(description = "方向")
     private String direction;
+    @Schema(description = "poi地址信息")
     private String address;
+    @Schema(description = "坐标点")
     private String location;
+    @Schema(description = "poi所在商圈名称")
     private String businessarea;
 
     public String getId() {

@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc715f04-fb2f-4745-a7e1-d4c2ce6eca9d" name="Changes" comment="完善功能开发">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/road/controller/RoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/controller/RoadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/RoadInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/param/RoadInfoParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/entity/RoadInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/entity/RoadInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/response/AddressComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/response/AddressComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/response/Aoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/response/Aoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/response/Poi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/response/Poi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/response/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/response/Road.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/response/Roadinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/response/Roadinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/repository/RoadInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/repository/RoadInfoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/road/service/RoadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/service/RoadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -113,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676379855642</updated>
       <workItem from="1676379858061" duration="2769000" />
-      <workItem from="1676423759921" duration="34781000" />
+      <workItem from="1676423759921" duration="39156000" />
     </task>
     <task id="LOCAL-00001" summary="完善功能开发">
       <created>1676451203742</created>
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676538084310</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完善功能开发">
+      <created>1676707482593</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676707482593</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

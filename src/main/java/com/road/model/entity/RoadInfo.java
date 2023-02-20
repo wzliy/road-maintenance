@@ -62,7 +62,7 @@ public class RoadInfo {
     private String rectificationPhoto;
 
     // 状态
-    @Schema(description = "状态")
+    @Schema(description = "状态：registered：已登记；rectified：已整改")
     private String status;
 
 
