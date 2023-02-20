@@ -11,3 +11,10 @@ spring:
     url: jdbc:mysql://119.91.136.116:3306/road_maintenance?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: Wang@100086
+
+  servlet:
+
+    # 设置上传文件最大大小
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB

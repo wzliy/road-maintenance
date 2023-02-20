@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 公共服务
@@ -33,5 +34,18 @@ public class CommonController {
     public ApiResult<GeocodeResponse> reverse(@Parameter(name = "location", description = "经纬度") @RequestParam String location) {
         return ResultUtil.success(commonService.reverse(location));
     }
+
+
+    /**
+     * 上传文件
+     * @param multipartFile 文件流
+     * @return 文件地址
+     */
+    @PostMapping(name = "/file/upload", headers = "content-type=multipart/form-data")
+    @Operation(summary = "文件上传", description = "文件上传接口")
+    public ApiResult<String> uploadFile(@RequestParam("uploadFile") MultipartFile multipartFile){
+        return ResultUtil.success(commonService.uploadFile(multipartFile));
+    }
+
 
 }

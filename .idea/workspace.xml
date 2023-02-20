@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc715f04-fb2f-4745-a7e1-d4c2ce6eca9d" name="Changes" comment="完善功能开发" />
+    <list default="true" id="dc715f04-fb2f-4745-a7e1-d4c2ce6eca9d" name="Changes" comment="增加跨域允许">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676379855642</updated>
       <workItem from="1676379858061" duration="2769000" />
-      <workItem from="1676423759921" duration="39830000" />
+      <workItem from="1676423759921" duration="47138000" />
     </task>
     <task id="LOCAL-00001" summary="完善功能开发">
       <created>1676451203742</created>
@@ -145,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676861972142</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="增加跨域允许">
+      <created>1676862942974</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676862942974</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +177,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完善功能开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善功能开发" />
+    <MESSAGE value="增加跨域允许" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加跨域允许" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

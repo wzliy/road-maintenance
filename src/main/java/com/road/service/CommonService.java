@@ -2,11 +2,15 @@ package com.road.service;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.qcloud.cos.model.PutObjectResult;
 import com.road.common.client.RestClient;
 import com.road.model.response.GeocodeResponse;
+import com.road.oss.TencentYunClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,9 +18,11 @@ import java.util.Map;
 public class CommonService {
 
     private final RestClient restClient;
+    private final TencentYunClient tencentYunClient;
 
-    public CommonService(RestClient restClient) {
+    public CommonService(RestClient restClient, TencentYunClient tencentYunClient) {
         this.restClient = restClient;
+        this.tencentYunClient = tencentYunClient;
     }
 
 
@@ -37,5 +43,30 @@ public class CommonService {
             return geocodeResponse;
         }
         return null;
+    }
+
+    /**
+     * 上传文件
+     * @param multipartFile 文件流参数
+     */
+    public String uploadFile(MultipartFile multipartFile) {
+        String fileName = multipartFile.getOriginalFilename();
+        assert fileName != null;
+        String suffix = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+        String requestKey = "road/" + System.currentTimeMillis() + suffix;
+
+
+        try {
+            File tempFile = File.createTempFile("temp", null);
+            multipartFile.transferTo(tempFile);
+            PutObjectResult putObjectResult = tencentYunClient.uploadFile(tempFile, requestKey);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String path = "https://maintenance-1253241117.cos.ap-guangzhou.myqcloud.com/" + requestKey;
+        return path;
+
+
     }
 }
