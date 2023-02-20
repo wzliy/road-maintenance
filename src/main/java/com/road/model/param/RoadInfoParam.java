@@ -28,6 +28,10 @@ public class RoadInfoParam {
     @Schema(description = "发现人员")
     private String discoveryStaff;
 
+    // 发现时间
+    @Schema(description = "发现时间")
+    private String discoveryTime;
+
     // 路况描述
     @Schema(description = "路况描述")
     private String dangerDesc;
@@ -98,6 +102,14 @@ public class RoadInfoParam {
 
     public void setDiscoveryStaff(String discoveryStaff) {
         this.discoveryStaff = discoveryStaff;
+    }
+
+    public String getDiscoveryTime() {
+        return discoveryTime;
+    }
+
+    public void setDiscoveryTime(String discoveryTime) {
+        this.discoveryTime = discoveryTime;
     }
 
     public String getDangerDesc() {

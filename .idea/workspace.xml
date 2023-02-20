@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc715f04-fb2f-4745-a7e1-d4c2ce6eca9d" name="Changes" comment="增加跨域允许">
+    <list default="true" id="dc715f04-fb2f-4745-a7e1-d4c2ce6eca9d" name="Changes" comment="新增上传文件接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/entity/RoadInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/entity/RoadInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/road/model/param/RoadInfoParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/road/model/param/RoadInfoParam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +61,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.11764705" />
     <property name="project.structure.side.proportion" value="0.27716184" />
     <property name="settings.editor.selected.configurable" value="spring.boot" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn package spring-boot:repackage" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
@@ -106,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676379855642</updated>
       <workItem from="1676379858061" duration="2769000" />
-      <workItem from="1676423759921" duration="47138000" />
+      <workItem from="1676423759921" duration="50020000" />
     </task>
     <task id="LOCAL-00001" summary="完善功能开发">
       <created>1676451203742</created>
@@ -157,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676862942974</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="新增上传文件接口">
+      <created>1676873465793</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676873465793</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,18 +191,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完善功能开发" />
     <MESSAGE value="增加跨域允许" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加跨域允许" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/road/service/CommonService.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="新增上传文件接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增上传文件接口" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
